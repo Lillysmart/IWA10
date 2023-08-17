@@ -55,27 +55,27 @@ const futureId = 9;
 console.log(holidays[christmas]);
 console.log(holidays.futureId || `ID ${futureId} not created yet`);
 
-copied = holidays[6].name;
-console.log(copied);
-copied = {
+//copied = holidays[6].name;
+//console.log(copied);
+const copied = {
   name: "X-mas Day",
   date: new Date(`25 December ${currentYear}`),
 };
 
 console.log(copied);
-correctDate = copied.date;
+const correctDate = copied.date;
 console.log(correctDate);
 //correctDate.hours = 0
 //correctDate.minutes = 0
-isEarlier = copied.date < holidays[6].date;
+const isEarlier = copied.date < holidays[6].date;
 console.log("New date is earlier:", isEarlier);
 if (isEarlier) console.log("ID change:", holidays[6].id === copied.id);
 console.log("Name change:", holidays[6].name !== copied.name && copied.name);
 console.log("Date change:", holidays[6].date !== copied.date && correctDate);
 
 const firstHolidayTimestamp = Math.min(
-  holidays[0].date.getTime(),
-  holidays[1].date.getTime,
+ holidays[0].date.getTime(),
+  holidays[1].date.getTime(),
   holidays[2].date.getTime,
   holidays[3].date.getTime,
   holidays[4].date.getTime,
@@ -86,15 +86,15 @@ const firstHolidayTimestamp = Math.min(
 );
 
 const lastHolidayTimestamp = Math.max(
-  holidays[0].date.getTime,
-  holidays[1].date.getTime,
-  holidays[2].date.getTime,
-  holidays[3].date.getTime,
-  holidays[4].date.getTime,
-  holidays[5].date.getTime,
-  holidays[6].date.getTime,
-  holidays[7].date.getTime,
-  holidays[8].date.getTime
+  holidays[0].getTime(),
+  holidays[1].getTime(),
+  holidays[2].getTime (),
+  holidays[3].getTime(),
+  holidays[4].getTime(),
+  holidays[5].getTime(),
+  holidays[6].getTime(),
+  holidays[7].getTime(),
+  holidays[8].getTime()
 );
 
 const firstDay = firstHolidayTimestamp.getDate();

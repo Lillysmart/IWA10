@@ -4,7 +4,7 @@ const holidays = {
   0: {
     id: 0,
     name: "Day of Reconciliation",
-    date: (`16 December ${currentYear}`),
+    date: `16 December ${currentYear}`,
   },
   1: {
     id: 1,
@@ -73,10 +73,10 @@ if (isEarlier) console.log("ID change:", holidays[6].id === copied.id);
 console.log("Name change:", holidays[6].name !== copied.name && copied.name);
 console.log("Date change:", holidays[6].date !== copied.date && correctDate);
 
-holidays[0].date =new Date(`16 December ${currentYear}`)
+holidays[0].date = new Date(`16 December ${currentYear}`);
 
 const firstHolidayTimestamp = Math.min(
-  holidays[0].date .getTime(),
+  holidays[0].date.getTime(),
   holidays[1].date.getTime(),
   holidays[2].date.getTime(),
   holidays[3].date.getTime(),
@@ -85,41 +85,43 @@ const firstHolidayTimestamp = Math.min(
   holidays[6].date.getTime(),
   holidays[7].date.getTime(),
   holidays[8].date.getTime()
-  );
+);
 
-const lastHolidayTimestamp =  (Math.max (
-holidays[0].date.getTime(), 
+const lastHolidayTimestamp = Math.max(
+  holidays[0].date.getTime(),
   holidays[1].date.getTime(),
-  holidays[2].date.getTime (),
+  holidays[2].date.getTime(),
   holidays[3].date.getTime(),
   holidays[4].date.getTime(),
   holidays[5].date.getTime(),
   holidays[6].date.getTime(),
   holidays[7].date.getTime(),
   holidays[8].date.getTime()
-));
-console.log(firstHolidayTimestamp ) ;
-console.log( lastHolidayTimestamp )
+);
+console.log(firstHolidayTimestamp);
+console.log(lastHolidayTimestamp);
 
-const firstDay =new Date (firstHolidayTimestamp).getDate();
-console.log (firstDay)
-const firstMonth =new Date(firstHolidayTimestamp) .getMonth()+1;
-console.log (firstMonth)
- 
-const lastDay = new Date (lastHolidayTimestamp).getDate()
-console.log (lastDay)
+const firstDay = new Date(firstHolidayTimestamp).getDate();
+console.log(firstDay);
+const firstMonth = new Date(firstHolidayTimestamp).getMonth() + 1;
+console.log(firstMonth);
 
-const lastMonth = new Date (lastHolidayTimestamp).getMonth()+1 ;
-console.log (lastMonth)
+const lastDay = new Date(lastHolidayTimestamp).getDate();
+console.log(lastDay);
 
-console.log(`${firstDay.toString().padStart(2, '0')}/${firstMonth.toString().padStart(2, '0')}/${currentYear}`);
+const lastMonth = new Date(lastHolidayTimestamp).getMonth() + 1;
+console.log(lastMonth);
+
+console.log(
+  `${firstDay.toString().padStart(2, "0")}/${firstMonth
+    .toString()
+    .padStart(2, "0")}/${currentYear}`
+);
 console.log(`${lastDay}/${lastMonth}/${currentYear}`);
 
-
-
-const randomHoliday =(new Date(holidays));
+const randomHoliday = new Date(holidays);
 const randomDate = new Date(randomHoliday.date);
 const randomDay = randomDate.getDate();
 const randomMonth = randomDate.getMonth() + 1;
 const randomYear = randomDate.getFullYear();
-console.log (randomDate)
+console.log(randomDate);

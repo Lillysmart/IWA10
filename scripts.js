@@ -119,10 +119,13 @@ console.log(
 );
 console.log(`${lastDay}/${lastMonth}/${currentYear}`);
 
-const randomNum = Math.floor(Math.random() * 8);
+const randomNum = Math.floor(Math.random() * 9);
+const randomHoliday = new Date ( holidays[randomNum].date);
 
-const randomDate = new Date(randomHoliday.date);
-const randomDay = randomDate.getDate();
-const randomMonth = randomDate.getMonth() + 1;
-const randomYear = randomDate.getFullYear();
-console.log(randomDate);
+const randomDay = (randomHoliday).getDate();
+const randomMonth =  (randomHoliday).getMonth() + 1;
+const randomYear = new Date (randomHoliday).getFullYear();
+
+const randomHolidayDate=console.log(`${randomDay.toString().padStart(2, "0")}/${randomMonth.toString().padStart(2, "0")}/${randomYear}`);
+console.log (randomHolidayDate)
+
